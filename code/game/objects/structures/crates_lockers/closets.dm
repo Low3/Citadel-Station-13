@@ -37,7 +37,8 @@
 	var/lock_in_use = FALSE //Someone is doing some stuff with the lock here, better not proceed further
 	var/eigen_teleport = FALSE //If the closet leads to Mr Tumnus.
 	var/obj/structure/closet/eigen_target //Where you go to.
-
+	/// The biggest mob_size that can fit
+	var/max_mob_size = MOB_SIZE_HUMAN
 
 /obj/structure/closet/Initialize(mapload)
 	. = ..()
