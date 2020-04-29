@@ -3360,4 +3360,5 @@
 #include "modular_citadel\code\modules\reagents\objects\items.dm"
 #include "modular_citadel\code\modules\reagents\reagents\cit_reagents.dm"
 #include "modular_citadel\interface\skin.dmf"
+#include "tff\gaslamp.dm"
 // END_INCLUDE
