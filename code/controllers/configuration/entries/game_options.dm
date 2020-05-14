@@ -35,6 +35,13 @@
 /datum/config_entry/keyed_list/midround_antag/ValidateListEntry(key_name, key_value)
 	return key_name in config.modes
 
+/datum/config_entry/keyed_list/force_antag_count
+	key_mode = KEY_MODE_TEXT
+	value_mode = VALUE_MODE_FLAG
+
+/datum/config_entry/keyed_list/force_antag_count/ValidateListEntry(key_name, key_value)
+	return key_name in config.modes
+
 /datum/config_entry/keyed_list/policy
 	key_mode = KEY_MODE_TEXT
 	value_mode = VALUE_MODE_TEXT
@@ -73,6 +80,8 @@
 /datum/config_entry/flag/disable_secborg	// disallow secborg module to be chosen.
 
 /datum/config_entry/flag/disable_peaceborg
+
+/datum/config_entry/flag/economy	//money money money money money money money money money money money money
 
 /datum/config_entry/number/minimum_secborg_alert	//Minimum alert level for secborgs to be chosen.
 	config_entry_value = 3
@@ -346,6 +355,11 @@
 
 /datum/config_entry/number/space_budget
 	config_entry_value = 16
+	min_val = 0
+
+/datum/config_entry/number/icemoon_budget
+	config_entry_value = 90
+	integer = FALSE
 	min_val = 0
 
 /datum/config_entry/number/station_space_budget

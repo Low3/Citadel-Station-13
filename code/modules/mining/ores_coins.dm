@@ -340,6 +340,9 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		var/datum/material/M = i
 		value += M.value_per_unit * custom_materials[M]
 
+/obj/item/coin/get_item_credit_value()
+	return value
+
 /obj/item/coin/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
 	if (!attack_self(user))
@@ -363,12 +366,11 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/coin/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/cable_coil))
-		var/obj/item/stack/cable_coil/CC = W
 		if(string_attached)
 			to_chat(user, "<span class='warning'>There already is a string attached to this coin!</span>")
 			return
 
-		if (CC.use(1))
+		if (W.use_tool(src, user, 0, 1, max_level = JOB_SKILL_BASIC))
 			add_overlay("coin_string_overlay")
 			string_attached = 1
 			to_chat(user, "<span class='notice'>You attach a string to the coin.</span>")

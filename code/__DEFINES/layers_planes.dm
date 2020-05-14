@@ -1,6 +1,8 @@
 //Defines for atom layers and planes
 //KEEP THESE IN A NICE ACSCENDING ORDER, PLEASE
 
+#define PLANE_VOID -100
+
 #define CLICKCATCHER_PLANE -99
 
 #define PLANE_SPACE -95
@@ -78,8 +80,9 @@
 #define SPACEVINE_LAYER 4.8
 #define SPACEVINE_MOB_LAYER 4.9
 //#define FLY_LAYER 5 //For easy recordkeeping; this is a byond define
-#define GASFIRE_LAYER 5.05
-#define RIPPLE_LAYER 5.1
+#define ABOVE_FLY_LAYER 5.1
+#define GASFIRE_LAYER 5.2
+#define RIPPLE_LAYER 5.3
 
 #define GHOST_LAYER 6
 #define LOW_LANDMARK_LAYER 9
